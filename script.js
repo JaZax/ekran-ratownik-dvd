@@ -1,6 +1,25 @@
+alert('click to enable/disable fullscreen')
+
 const canvas = document.querySelector('canvas');
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+
+let fullscreen = false;
+
+canvas.addEventListener('click' , ()=>{
+    if(fullscreen === false)
+    {
+        fullscreen = true
+        canvas.requestFullscreen()
+    }
+    else if(fullscreen === true)
+    {
+        fullscreen = false;
+        document.webkitExitFullscreen();
+    }
+        
+})
+
 
 window.addEventListener('resize' , ()=>{
     canvas.height = window.innerHeight;
