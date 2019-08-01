@@ -2,6 +2,6 @@
  
 simple canvas based dvd screensaver
 
-website: 
+website: https://fajnytenpimpek.glitch.me/
 
 maybe Ill add some effects later
