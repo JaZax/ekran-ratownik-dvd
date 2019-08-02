@@ -1,4 +1,4 @@
-alert('click to enable/disable fullscreen')
+//alert('click to enable/disable fullscreen')
 
 const canvas = document.querySelector('canvas');
 canvas.height = window.innerHeight;
@@ -33,14 +33,22 @@ var image = new Image();
     image.src = 'dvd.png';
     image.height = 200
 
-let x = window.innerWidth/2 - image.width/2;
-let y = window.innerHeight/2 - image.height/2;
-let xspeed = 3;
-let yspeed = 3;
+let x = Math.random() * window.innerWidth;
+let y = Math.random() * window.innerHeight;
+
+const speed = [
+    3,
+    -3
+]
+
+let xspeed = speed[Math.floor(Math.random()*speed.length)];
+let yspeed = speed[Math.floor(Math.random()*speed.length)];
 
 function animation()
 {
     requestAnimationFrame(animation);
+
+    console.log(x)
 
     c.clearRect(0 , 0 , window.innerWidth, window.innerHeight)
     c.drawImage(image, x, y);
